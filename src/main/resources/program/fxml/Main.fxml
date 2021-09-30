@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="mainVBox" alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Text text="Üdv a Nav számlabeküldő alkalmazasban! v3.0">
+            <font>
+                <Font size="25.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="40.0" left="10.0" right="10.0" top="20.0"/>
+            </VBox.margin>
+        </Text>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="5.0">
+            <children>
+                <Label text="Adatbazis mod mukodik:">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="dbWorkingLabel" text="-">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label text="XML mod mukodik:">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <HBox.margin>
+                        <Insets left="15.0"/>
+                    </HBox.margin>
+                </Label>
+                <Label text="-" fx:id="xmlWorkingLabel">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="146.0" prefWidth="200.0" spacing="5.0">
+            <children>
+                <Label text="A ceg adoszama:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="taxNumberLabel" text="-">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+            <children>
+                <Label text="A NAV API cime:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="navApiAddressLabel" text="-">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <Button fx:id="manageInvoiceButton" alignment="CENTER" onAction="#handleManageInvoiceRequestButtonAction"
+                text="Manage Invoice Request" textAlignment="CENTER"/>
+        <Button fx:id="transactionStatusButton" alignment="CENTER" onAction="#handleInvoiceStatusCheckButtonAction"
+                text="Szamla statusz ellenorzese" textAlignment="CENTER"/>
+        <Button fx:id="invoiceDataButton" alignment="CENTER" mnemonicParsing="false"
+                onAction="#handleInvoiceDataButtonAction" text="Invoice Data" textAlignment="CENTER"/>
+
+        <Button alignment="CENTER" contentDisplay="CENTER" onAction="#handleExitButtonAction" text="Exit"/>
+    </children>
+</VBox>

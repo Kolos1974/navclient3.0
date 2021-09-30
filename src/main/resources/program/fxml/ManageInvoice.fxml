@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="814.0" prefWidth="939.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label text="Manage Invoice">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <SplitPane fx:id="mainSplitPane" dividerPositions="0.5" prefHeight="500.0" prefWidth="500.0">
+            <items>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label text="XML mod">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="startStopXmlButton" mnemonicParsing="false" onAction="#handlestartStopXmlButtonAction" text="Start" />
+                        <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                            <children>
+                                <Label text="Feltoltesi kiserletek szama:" />
+                                <Label fx:id="numberOfUploadAttemptsXmlLabel" text="0 db" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="116.0" prefWidth="200.0" spacing="5.0">
+                            <children>
+                                <Label text="Ebbol sikeres:" />
+                                <Label fx:id="numberOfSuccAttemptsXmlLabel" text="0 db" />
+                                <Label layoutX="94.0" layoutY="10.0" text="Ebbol sikertelen:">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <Label fx:id="numberOfFailAttemptsXmlLabel" layoutX="318.0" layoutY="10.0" text="0 db" />
+                            </children>
+                        </HBox>
+                        <TextArea fx:id="infoXmlTextArea" editable="false" prefHeight="200.0" prefWidth="500.0">
+                            <VBox.margin>
+                                <Insets left="5.0" right="5.0" top="30.0" />
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                </VBox>
+                <VBox fx:id="dbVBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label text="Adatbazis mod">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="startStopDbButton" mnemonicParsing="false" onAction="#handlestartStopDbButtonAction" text="Start" />
+                        <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                            <children>
+                                <Label text="Feltoltesi kiserletek szama:" />
+                                <Label fx:id="numberOfUploadAttemptsDbLabel" text="0 db" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                            <children>
+                                <Label text="Ebbol sikeres:" />
+                                <Label fx:id="numberOfSuccAttemptsDbLabel" text="0 db" />
+                                <Label layoutX="94.0" layoutY="10.0" text="Ebbol sikertelen:">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <Label fx:id="numberOfFailAttemptsDbLabel" layoutX="318.0" layoutY="10.0" text="0 db" />
+                            </children>
+                        </HBox>
+                  <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="A kovetkezo feltoltesig meg ennyi ido van:" />
+                        <Label fx:id="remaingTimeDbLabel" text="-" />
+                     </children>
+                  </HBox>
+                        <TextArea fx:id="infoDbTextArea" editable="false" prefHeight="200.0" prefWidth="500.0">
+                            <VBox.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+        <Button mnemonicParsing="false" onAction="#handleBackButtonAction" text="Vissza">
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+        </Button>
+    </children>
+    <padding>
+        <Insets left="30.0" right="30.0" />
+    </padding>
+</VBox>

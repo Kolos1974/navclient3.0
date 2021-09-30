@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+<!--reference as publicId & filepath-->
+	<!--<public publicId="http://schemas.nav.gov.hu/NTCA/1.0/common" uri="./files/NTCA/Common/common.xsd"/>-->
+	<!--<public publicId="http://schemas.nav.gov.hu/OSA/3.0/base" uri="./files/OSA/Invoice/invoiceBase.xsd"/>-->
+	<public publicId="http://schemas.nav.gov.hu/NTCA/1.0/common" uri="./common.xsd"/>
+	<public publicId="http://schemas.nav.gov.hu/OSA/3.0/base" uri="./invoiceBase.xsd"/>
+<!--reference as publicId & URI-->
+	<!--<public publicId="http://schemas.nav.gov.hu/NTCA/1.0/common" uri="https://raw.githubusercontent.com/nav-gov-hu/Common/Common-1.0.RC3/src/schemas/nav/gov/hu/NTCA/common.xsd"/>-->
+</catalog>
