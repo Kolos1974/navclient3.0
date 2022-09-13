@@ -55,7 +55,7 @@ public class InvoiceDataGenerator {
         CustomerInfoType customerInfo = new CustomerInfoType();
         customerInfo.setCustomerVatStatus(getCustomerVatStatus(vesza));
         if (getCustomerVatStatus(vesza) == CustomerVatStatusType.PRIVATE_PERSON) {
-           // Nem szabad semmit sem kitölteni!	
+           // Nem szabad semmit sem kitÃ¶lteni!	
         } 
         else 
         {
@@ -136,6 +136,10 @@ public class InvoiceDataGenerator {
                 invoiceDetail.setInvoiceDeliveryPeriodStart(DateConverter.convertTimestampToXmlGregorianCalendarNoUTC(szamla.getSzidoszTol()));
                 invoiceDetail.setInvoiceDeliveryPeriodEnd(DateConverter.convertTimestampToXmlGregorianCalendarNoUTC(szamla.getSzidoszIg()));
                 invoiceDetail.setInvoiceAccountingDeliveryDate(DateConverter.convertTimestampToXmlGregorianCalendarNoUTC(szamla.getSzidoszIg()));
+                // 2022.08.25. Begin
+                invoiceDetail.setPeriodicalSettlement(true);
+                // 2022.08.25. End
+                
             }
         } catch (DatatypeConfigurationException e) {
             throw new InvoiceRequestGenException(e.getMessage());
@@ -282,19 +286,19 @@ public class InvoiceDataGenerator {
         } else if (afaKulcs.equals("55")) {
         	DetailedReasonType detailedReason = new DetailedReasonType();
         	detailedReason.setCase("ATK");
-        	detailedReason.setReason("ÁFA hatályon kívüli");
+        	detailedReason.setReason("ÃFA hatÃ¡lyon kÃ­vÃ¼li");
             // vatRate.setVatOutOfScope(true);
         	vatRate.setVatOutOfScope(detailedReason);
         } else if (afaKulcs.equals("66")) {
         	DetailedReasonType detailedReason = new DetailedReasonType();
         	detailedReason.setCase("AAM");
-        	detailedReason.setReason("Alanyi adómentes");
+        	detailedReason.setReason("Alanyi adÃ³mentes");
             //vatRate.setVatExemption("AAM");
         	vatRate.setVatOutOfScope(detailedReason);
         } else if (afaKulcs.equals("77")) {
         	DetailedReasonType detailedReason = new DetailedReasonType();
         	detailedReason.setCase("TAM");
-        	detailedReason.setReason("Tárgyi adómentes");
+        	detailedReason.setReason("TÃ¡rgyi adÃ³mentes");
         	//vatRate.setVatExemption("TAM");
         	vatRate.setVatOutOfScope(detailedReason);
         } else if (afaKulcs.equals("88")) {
@@ -302,7 +306,7 @@ public class InvoiceDataGenerator {
         } else if (afaKulcs.equals("99")) {
         	DetailedReasonType detailedReason = new DetailedReasonType();
         	detailedReason.setCase("ATK");
-        	detailedReason.setReason("Adóalapot nem képezõ");
+        	detailedReason.setReason("AdÃ³alapot nem kÃ©pezÅ‘");
         	vatRate.setVatOutOfScope(detailedReason);
         }
         return vatRate;
@@ -329,13 +333,13 @@ public class InvoiceDataGenerator {
             case "NAP":
                 NAVUnitOfMeasure = UnitOfMeasureType.DAY;
                 break;
-            case "ï¿½RA":
+            case "ÄÅ¼ËRA":
                 NAVUnitOfMeasure = UnitOfMeasureType.HOUR;
                 break;
             case "PERC":
                 NAVUnitOfMeasure = UnitOfMeasureType.MINUTE;
                 break;
-            case "Hï¿½":
+            case "HÄÅ¼Ë":
                 NAVUnitOfMeasure = UnitOfMeasureType.MONTH;
                 break;
             case "LITER":
@@ -363,7 +367,7 @@ public class InvoiceDataGenerator {
             // Missing:
             // A	 - AMPER
             // ALKAL - OPPORTUNITY
-            // ï¿½V	 - YEAR
+            // ÄÅ¼ËV	 - YEAR
             // M2    - SQUARE_METER
             // Q 	 - QUINTAL
 
@@ -382,7 +386,7 @@ public class InvoiceDataGenerator {
     	CustomerVatStatusType customerVatStatus;
     	Boolean talalt = false;
     	
-    	// Legyen egy alapértelmezett érték:
+    	// Legyen egy alapÃ©rtelmezett Ã©rtÃ©k:
    	    customerVatStatus = CustomerVatStatusType.DOMESTIC;
     	
     	if ((vesza.getAdoszam().length()>0) && (!(talalt))) {
